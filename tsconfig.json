@@ -10,8 +10,8 @@
     "resolveJsonModule": true,
     "paths": {
       "~*": ["./*"],
-      "globalStyles": ["./globalStyles.ts"],
-      "App*": ["./App/*"]
+      "shared": ["./App/shared"],
+      "views": ["./App/views"]
     }
   }
 }

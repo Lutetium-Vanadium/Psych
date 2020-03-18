@@ -10,7 +10,11 @@ module.exports = function(api) {
           root: ["./src"],
           alias: {
             App: "./App",
-            globalStyles: "./globalStyles.ts"
+            globalStyles: "./globalStyles",
+            base: "./base",
+            types: "./types",
+            shared: "./App/shared",
+            views: "./App/views"
           }
         }
       ]

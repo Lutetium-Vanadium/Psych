@@ -1,16 +1,30 @@
+import "react-native-gesture-handler";
 import React from "react";
-import { StyleSheet, View, Dimensions } from "react-native";
+import { StyleSheet, View } from "react-native";
+import { NavigationContainer, DarkTheme } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
-import Home from "./Home";
+import Home from "./views/Home";
+import NewGame from "./views/NewGame";
+import JoinGame from "./views/JoinGame";
+import { clr } from "globalStyles";
 
-const dims = Dimensions.get("window");
-const innerHeight = dims.height;
-const innerWidth = dims.width;
+const placeholder = {
+  uri: "https://placekitten.com/300/200"
+};
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <View style={styles.root}>
-      <Home />
+      <NavigationContainer theme={DarkTheme}>
+        <Stack.Navigator initialRouteName="home">
+          <Stack.Screen name="home" component={Home} options={{ headerShown: false }} />
+          <Stack.Screen name="new-game" component={NewGame} options={{ headerShown: false }} />
+          <Stack.Screen name="join-game" component={JoinGame} options={{ headerShown: false }} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </View>
   );
 }
@@ -18,8 +32,8 @@ export default function App() {
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    backgroundColor: "#141414",
-    alignItems: "center",
-    justifyContent: "center"
+    backgroundColor: clr.codGray,
+    justifyContent: "center",
+    zIndex: -1
   }
 });
