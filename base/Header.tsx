@@ -15,7 +15,7 @@ interface HeaderProps {
 function Header({ navigation, title = "" }: HeaderProps) {
   return (
     <LinearGradient colors={[clr.dodgerBlue, clr.stTropaz]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={styles.titleWrapper}>
-      <Button onPress={() => navigation.goBack()} style={{ flex: 2 }} underlayColor={clr.malibu}>
+      <Button onPress={() => navigation.goBack()} style={{ flex: 2, alignItems: "flex-start" }} underlayColor={clr.malibu}>
         <Text style={[styles.title, { fontSize: 45, transform: [{ translateX: 15 }, { translateY: -5 }] }]}>‹</Text>
       </Button>
       <View style={{ flex: 13, ...flexBox() }}>

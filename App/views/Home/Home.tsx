@@ -36,10 +36,10 @@ function Home({ navigation }: HomeProps) {
         <Text style={globalStyles.h3}>OR IF YOU'RE THE GAME LEADER, START A GAME FROM ONE OF THE DECKS BELOW</Text>
       </View>
       <View style={[styles.flex, { flexDirection: "row" }]}>
-        <Button onPress={() => createGame(placeholder)}>
+        <Button style={styles.flex} onPress={() => createGame(placeholder)}>
           <Image source={placeholder} style={globalStyles.card} />
         </Button>
-        <Button onPress={() => createGame(placeholder)}>
+        <Button style={styles.flex} onPress={() => createGame(placeholder)}>
           <Image source={placeholder} style={globalStyles.card} />
         </Button>
       </View>
